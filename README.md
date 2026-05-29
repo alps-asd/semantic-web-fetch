@@ -83,7 +83,7 @@ transition leads to, while `href` is merely where the link would go.
 **Published (GitHub Pages):** enable Pages under *Settings → Pages → Build and deployment →
 Deploy from a branch*, branch `main`, folder `/ (root)`. The demo is then served at:
 
-```
+```text
 https://<your-username>.github.io/<your-repo>/
 ```
 
