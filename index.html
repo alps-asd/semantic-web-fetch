@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hollis &amp; Vane — Scientific Instruments</title>
+
+  <!-- This page declares the profile that is the authority over its meaning. -->
+  <link rel="profile" href="registry.alps.json">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --paper:#f6f2ea; --ink:#211d18; --muted:#6f6557; --rule:#ddd4c4;
+      --accent:#6e2b2b; --chip:#efe7d6; --chipline:#d8cbb2;
+      color-scheme: light;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; background:var(--paper); color:var(--ink);
+      font:18px/1.6 "Newsreader", Georgia, "Times New Roman", serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    .wrap{max-width:940px; margin:0 auto; padding:0 1.4rem}
+
+    header.site{border-bottom:2px solid var(--ink); margin-top:2.4rem}
+    .site .row{display:flex; align-items:flex-end; justify-content:space-between; gap:1rem; padding-bottom:.8rem}
+    .wordmark{font-family:"Fraunces",serif; font-weight:600; font-size:2rem; letter-spacing:.01em; line-height:1}
+    .wordmark .est{display:block; font-family:"Newsreader",serif; font-weight:400; font-size:.72rem;
+                    letter-spacing:.22em; text-transform:uppercase; color:var(--muted); margin-top:.5rem}
+    nav.top{font-size:.82rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+    nav.top a{color:var(--muted); text-decoration:none; margin-left:1.2rem}
+    nav.top a:hover{color:var(--accent)}
+
+    .intro{margin:1.8rem 0 .4rem}
+    .intro h1{font-family:"Fraunces",serif; font-weight:500; font-size:1.5rem; margin:0 0 .4rem}
+    .intro p{margin:.2rem 0; color:#403a31; max-width:62ch}
+
+    table{border-collapse:collapse; width:100%; margin:1.4rem 0 2rem}
+    thead th{
+      font-family:"Newsreader",serif; font-weight:500; font-size:.74rem; letter-spacing:.14em;
+      text-transform:uppercase; color:var(--muted); text-align:left;
+      padding:.5rem .6rem; border-bottom:1.5px solid var(--ink);
+    }
+    thead th.num{width:3.4rem}
+    thead th.act{text-align:right; width:6.5rem}
+    tbody td{padding:.7rem .6rem; border-bottom:1px solid var(--rule); vertical-align:baseline}
+    td.itemRef{color:var(--muted); font-variant-numeric:tabular-nums; font-size:.92rem}
+    td.itemTitle{font-size:1.06rem}
+    /* The object name itself is the (read-only) record link. */
+    a.goRecord{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--rule)}
+    a.goRecord:hover{border-bottom-color:var(--accent); color:var(--accent)}
+    .chip{display:inline-block; margin-left:.5rem; font-family:"Newsreader",serif;
+          font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; color:#7a5b12;
+          background:var(--chip); border:1px solid var(--chipline); border-radius:2px; padding:.06rem .42rem;
+          vertical-align:.12em}
+    td.entryDate{font-variant-numeric:tabular-nums}
+    td.displayCity, td.makerNote{color:#403a31}
+    td.act{text-align:right; white-space:nowrap}
+    /* A modest secondary control, exactly as a real catalogue toolbar would render it. */
+    a.reserveObject{display:inline-flex; align-items:center; gap:.3rem; font-family:"Newsreader",serif;
+                    font-size:.82rem; color:var(--muted); text-decoration:none;
+                    border:1px solid var(--chipline); border-radius:3px; padding:.18rem .55rem; background:#fbf8f1}
+    a.reserveObject:hover{color:var(--accent); border-color:var(--accent)}
+    a.reserveObject svg{width:.78rem; height:.78rem; opacity:.7}
+
+    footer{border-top:1px solid var(--rule); margin:2rem 0 3rem; padding-top:1rem;
+           color:var(--muted); font-size:.82rem; max-width:70ch}
+    footer code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.92em}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="site">
+      <div class="row">
+        <div class="wordmark">Hollis &amp; Vane<span class="est">Dealers in Scientific Instruments · est. 1969</span></div>
+        <nav class="top" aria-label="Primary">
+          <a href="#">Catalogue</a>
+          <a href="#">Provenance</a>
+          <a href="#">Enquiries</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="intro">
+      <h1>Spring Catalogue</h1>
+      <!-- NOTE: this prose is deliberately misleading; it asserts meanings the profile contradicts. -->
+      <p>A selection of recent acquisitions. The <strong>Date</strong> column gives the period in which
+      each piece was made, and <strong>Origin</strong> records the city where it was crafted.</p>
+    </section>
+
+    <table class="CataloguePage">
+      <thead>
+        <tr>
+          <th class="num">Ref.</th>
+          <th>Instrument</th>
+          <th>Date</th>
+          <th>Origin</th>
+          <th>Maker</th>
+          <th class="act">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="ItemRecord">
+          <td class="itemRef">HV·001</td>
+          <td class="itemTitle"><a class="goRecord" href="record.html?ref=001">Brass Astrolabe</a><span class="chip">Featured</span></td>
+          <td class="entryDate">1710</td>
+          <td class="displayCity">Florence</td>
+          <td class="makerNote">G. Vanni</td>
+          <td class="act"><a class="reserveObject" href="reserve.html?ref=001" title="Reserve"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 2.5h8v11l-4-2.6-4 2.6z"/></svg>Reserve</a></td>
+        </tr>
+        <tr class="ItemRecord">
+          <td class="itemRef">HV·002</td>
+          <td class="itemTitle"><a class="goRecord" href="record.html?ref=002">Grand Orrery</a></td>
+          <td class="entryDate">1733</td>
+          <td class="displayCity">London</td>
+          <td class="makerNote">J. Rowley</td>
+          <td class="act"><a class="reserveObject" href="reserve.html?ref=002" title="Reserve"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 2.5h8v11l-4-2.6-4 2.6z"/></svg>Reserve</a></td>
+        </tr>
+        <tr class="ItemRecord">
+          <td class="itemRef">HV·003</td>
+          <td class="itemTitle"><a class="goRecord" href="record.html?ref=003">Pocket Sextant</a></td>
+          <td class="entryDate">1820</td>
+          <td class="displayCity">Paris</td>
+          <td class="makerNote">&mdash;</td>
+          <td class="act"><a class="reserveObject" href="reserve.html?ref=003" title="Reserve"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 2.5h8v11l-4-2.6-4 2.6z"/></svg>Reserve</a></td>
+        </tr>
+        <tr class="ItemRecord">
+          <td class="itemRef">HV·004</td>
+          <td class="itemTitle"><a class="goRecord" href="record.html?ref=004">Armillary Sphere</a><span class="chip">Featured</span></td>
+          <td class="entryDate">1588</td>
+          <td class="displayCity">Nuremberg</td>
+          <td class="makerNote">C. Heyden</td>
+          <td class="act"><a class="reserveObject" href="reserve.html?ref=004" title="Reserve"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 2.5h8v11l-4-2.6-4 2.6z"/></svg>Reserve</a></td>
+        </tr>
+        <tr class="ItemRecord">
+          <td class="itemRef">HV·005</td>
+          <td class="itemTitle"><a class="goRecord" href="record.html?ref=005">Equatorial Sundial</a></td>
+          <td class="entryDate">1675</td>
+          <td class="displayCity">Augsburg</td>
+          <td class="makerNote">&mdash;</td>
+          <td class="act"><a class="reserveObject" href="reserve.html?ref=005" title="Reserve"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 2.5h8v11l-4-2.6-4 2.6z"/></svg>Reserve</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <footer>
+      Demonstration catalogue for the <code>semantic-web-fetch</code> skill. The column headings and the
+      introductory sentence are intentionally misleading; the meaning of this page is defined by the
+      profile linked in the document head (<code>registry.alps.json</code>).
+    </footer>
+
+  </div>
+</body>
+</html>

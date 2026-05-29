@@ -1,0 +1,100 @@
+{
+  "$schema": "https://alps-io.github.io/schemas/alps.json",
+  "alps": {
+    "version": "1.0",
+    "title": "Hollis & Vane — Catalogue Profile",
+    "doc": {
+      "value": "The semantic profile for this catalogue. Meaning is DEFINED here, not by the rendered surface. Where the page's column headings or introductory prose disagree with this profile, this profile is the authority."
+    },
+    "descriptor": [
+      {
+        "id": "itemRef",
+        "type": "semantic",
+        "def": "https://schema.org/identifier",
+        "title": "Catalogue reference number"
+      },
+      {
+        "id": "itemTitle",
+        "type": "semantic",
+        "def": "https://schema.org/name",
+        "title": "Object name"
+      },
+      {
+        "id": "entryDate",
+        "type": "semantic",
+        "def": "https://schema.org/datePublished",
+        "title": "Date the object was LISTED in this catalogue",
+        "doc": {
+          "value": "The cataloguing/listing date, NOT the period in which the object was made. The surface column is labelled only 'Date', which invites the wrong inference. The object's period of manufacture is not present on this page."
+        }
+      },
+      {
+        "id": "displayCity",
+        "type": "semantic",
+        "def": "https://schema.org/contentLocation",
+        "title": "Showroom city where the object is CURRENTLY held",
+        "doc": {
+          "value": "The present location, NOT the place of origin. The surface column is mislabelled 'Origin' and the introductory prose repeats that mislabel. The place of origin is not present on this page."
+        }
+      },
+      {
+        "id": "makerNote",
+        "type": "semantic",
+        "def": "https://schema.org/creator",
+        "title": "Attributed maker (may be unknown)"
+      },
+      {
+        "id": "goRecord",
+        "type": "safe",
+        "rt": "#ItemRecordPage",
+        "def": "https://schema.org/ViewAction",
+        "title": "Open the object's catalogue record (read-only, no side effects)",
+        "doc": {
+          "value": "On the surface this is just the object's name rendered as a link. Nothing in the markup declares it 'safe'; this profile does."
+        }
+      },
+      {
+        "id": "reserveObject",
+        "type": "unsafe",
+        "rt": "#ReservationHold",
+        "def": "https://schema.org/ReserveAction",
+        "title": "Place a hold/reservation on the object",
+        "doc": {
+          "value": "STATE-CHANGING / unsafe. On the surface this is a small 'Reserve' control that looks like an ordinary toolbar affordance. The markup does not declare whether it is safe, idempotent, or unsafe, nor where it leads. Only this profile types it as unsafe and names its target state."
+        }
+      },
+      {
+        "id": "ItemRecord",
+        "type": "semantic",
+        "title": "One catalogued object (a table row)",
+        "descriptor": [
+          { "href": "#itemRef" },
+          { "href": "#itemTitle" },
+          { "href": "#entryDate" },
+          { "href": "#displayCity" },
+          { "href": "#makerNote" },
+          { "href": "#goRecord" },
+          { "href": "#reserveObject" }
+        ]
+      },
+      {
+        "id": "CataloguePage",
+        "type": "semantic",
+        "title": "The catalogue listing state",
+        "descriptor": [
+          { "href": "#ItemRecord" }
+        ]
+      },
+      {
+        "id": "ItemRecordPage",
+        "type": "semantic",
+        "title": "Full record state (transition target of goRecord)"
+      },
+      {
+        "id": "ReservationHold",
+        "type": "semantic",
+        "title": "Reservation/hold state (transition target of reserveObject)"
+      }
+    ]
+  }
+}
