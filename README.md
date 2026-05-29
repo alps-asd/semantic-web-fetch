@@ -90,6 +90,9 @@ https://<your-username>.github.io/<your-repo>/
 That published URL is what you point Claude at — no local server is needed, and serving over
 GitHub Pages keeps the relative profile link (`registry.alps.json`) resolving as it does in production.
 
+If your repository is configured to build Pages from `/docs`, keep `docs/index.html` and
+`docs/registry.alps.json` synchronized with the root copies.
+
 Then ask Claude, against that URL:
 
 > Read this page in conformance with its declared profile. Do not fill gaps by inference.
