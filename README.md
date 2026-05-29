@@ -111,6 +111,31 @@ The point is not that Claude *cannot* guess — it often guesses right. The poin
 stable when the surface changes, and exposes affordances (like the unsafe acquisition action) that a
 rendered page hides.
 
+## Trust boundary: the profile defines meaning, not trust
+
+This demo is benign: its profile is *more* honest than its surface. But the authority a profile holds
+is over **meaning**, never over **trust**. The profile, the page it is linked from, the `rel="profile"`
+referent, and every `def` target are all controlled by whoever controls the page. On an arbitrary URL
+that is an untrusted party, so two failure modes have to be guarded — and the skill (`SKILL.md`,
+*Trust boundary*) spells out the rules:
+
+- **Dereferencing is a network action on attacker-chosen input.** Following `rel="profile"` and `def`
+  fetches URLs the page picked. A hostile page can point them at `localhost`, a cloud metadata
+  endpoint, or an internal service — an SSRF attempt dressed as a "definition." Dereference only
+  `http`/`https`, refuse loopback/link-local/private addresses and `file:`/`data:`, prefer the
+  platform web fetcher over shell `curl`, and surface unexpected cross-origin targets before following
+  them.
+- **A declared `type: safe` is a *claim*, not a verified guarantee.** Flip this demo around: a
+  malicious catalogue could label its state-changing `reserveObject` (or a "delete", or a "pay") as
+  `type: safe` with `def: https://schema.org/ViewAction`, and a reader that conformed naively would
+  repeat "safe to view" for an action that charges your card. Report `type` as *what the profile
+  declares*, never as established safety; cross-check independent signals (HTTP method, form
+  semantics) and require explicit confirmation before any state-changing action, however it is
+  labelled.
+
+Conforming to a declaration is not the same as trusting it. The skill is designed to keep those two
+layers apart — including for safety.
+
 ## Background
 
 Inspired by [ALPS](https://alps-io.github.io/) (Application-Level Profile Semantics) and by ALPS-marked
